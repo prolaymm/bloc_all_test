@@ -1,10 +1,12 @@
 import 'package:bloc_test/counter/cubit/counter_cubit.dart';
 import 'package:bloc_test/counter/screen/BlocCounterScreen/bloc_counter_screen.dart';
 import 'package:bloc_test/counter/screen/CubitCounterScreen/CubitCounterScreen.dart';
+import 'package:bloc_test/covid/covid_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'counter/bloc/counter_bloc.dart';
+import 'counter/screen/covid_screen/covid_screen.dart';
 
 
 
@@ -37,13 +39,14 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
        BlocProvider(create: (_) => CounterBloc()),
+        BlocProvider(create: (_)=> CovidBloc()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home:  const BlocCounterScreen(),
+        home:  const CovidScreen(),
       ),
     );
   }
