@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
-  @override
+
+///Without multi porvider
+ /* @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
@@ -27,7 +29,25 @@ class MyApp extends StatelessWidget {
           create: (_)=> CounterBloc(),
           child: const BlocCounterScreen()),
     );
+  }*/
+
+  /// With multi provider
+ @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(
+      providers: [
+       BlocProvider(create: (_) => CounterBloc()),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home:  const BlocCounterScreen(),
+      ),
+    );
   }
+
 }
 
 
