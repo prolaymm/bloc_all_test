@@ -1,7 +1,10 @@
 import 'package:bloc_test/counter/cubit/counter_cubit.dart';
+import 'package:bloc_test/counter/screen/BlocCounterScreen/bloc_counter_screen.dart';
 import 'package:bloc_test/counter/screen/CubitCounterScreen/CubitCounterScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'counter/bloc/counter_bloc.dart';
 
 
 
@@ -21,8 +24,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: BlocProvider(
-          create: (_)=> CounterCubit(),
-          child: const CubitCounterScreen()),
+          create: (_)=> CounterBloc(),
+          child: const BlocCounterScreen()),
     );
   }
 }

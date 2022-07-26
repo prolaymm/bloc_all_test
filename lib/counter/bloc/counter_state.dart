@@ -10,6 +10,6 @@ import 'package:equatable/equatable.dart';
 }
 
 class CounterInitial extends CounterState {
-  const CounterInitial() : super(counterValue: 0);
+ const CounterInitial() : super(counterValue: 0);
 
 }
